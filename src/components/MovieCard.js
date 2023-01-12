@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 
 export default function MediaCard(props) {
 
-  console.log(props, "props from MovieCard")
+  // console.log(props, "props from MovieCard")
 
   return (
     <Card sx={{ maxWidth: 345 }}>

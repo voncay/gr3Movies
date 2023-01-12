@@ -62,16 +62,31 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar({ setQuery }) {
 
-  const handleInputChange = (event) => {
-    setQuery(event.target.value)
-  }
-
   let navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleHomeIcon = () => {
+    setQuery('')
+    const element = document.getElementById('searchInput')
+    element.value=''
+    navigate("/")
+  }
+
+  const handleMovieIcon = () => {
+    setQuery('')
+    const element = document.getElementById('searchInput')
+    element.value=''
+    navigate("/movies")
+  }
+
+  const handleInputChange = (event) => {
+    navigate("/")
+    setQuery(event.target.value)
+  }
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -193,12 +208,13 @@ export default function PrimarySearchAppBar({ setQuery }) {
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
               onChange={(event) => handleInputChange(event)}
+              id={'searchInput'}
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <MovieIcon onClick={() => navigate("/movies")}/>
-            <HomeIcon onClick={() => navigate("/")} />
+            <MovieIcon onClick={handleMovieIcon}/> // to fix
+            <HomeIcon onClick={handleHomeIcon} />  // to fix
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
