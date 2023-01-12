@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
 export default function MediaCard(props) {
-  const [movies, setMovies] = useContext(MoviesContext);
+  // const [movies, setMovies] = useContext(MoviesContext);
 
   let navigate = useNavigate();
 
