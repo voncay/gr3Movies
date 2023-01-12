@@ -213,8 +213,8 @@ export default function PrimarySearchAppBar({ setQuery }) {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <MovieIcon onClick={handleMovieIcon}/> // to fix
-            <HomeIcon onClick={handleHomeIcon} />  // to fix
+            <MovieIcon onClick={handleMovieIcon}/>
+            <HomeIcon onClick={handleHomeIcon} />
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
