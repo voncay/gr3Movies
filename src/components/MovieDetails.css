@@ -23,8 +23,9 @@
 .videos{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
     text-align: start;
+    padding: 10px;
 }

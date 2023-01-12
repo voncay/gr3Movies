@@ -93,10 +93,17 @@ const Movie = () => {
           {video.results ? (
             video.results.map((e) => {
               return (
-                <div>
-                  <p>{e.name}</p>
-                  <a href={`https://www.youtube.com/watch?v=${e.key}`} target="_blank">Link here</a>
-                </div>
+                <ul style={{ padding: "10px", listStyleType: "none" }}>
+                  <li>
+                    <p>{e.name}</p>
+                    <a
+                      href={`https://www.youtube.com/watch?v=${e.key}`}
+                      target="_blank"
+                    >
+                      Link here
+                    </a>
+                  </li>
+                </ul>
               );
             })
           ) : (
