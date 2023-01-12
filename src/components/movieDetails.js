@@ -18,7 +18,7 @@ const Movie = () => {
       )
       .then((res) => {
         setMovie(res.data);
-        console.log(res.data, "moviedetails");
+        // console.log(res.data, "moviedetails");
       })
       .catch((err) => console.log(err));
   };
@@ -34,7 +34,7 @@ const Movie = () => {
       )
       .then((res) => {
         setVideo(res.data);
-        console.log(res.data, "moviedetails video");
+        // console.log(res.data, "moviedetails video");
       })
       .catch((err) => console.log(err));
   };
