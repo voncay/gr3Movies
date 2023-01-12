@@ -5,7 +5,7 @@ import MovieCard from "./MovieCard";
 
 const SearchResults = () => {
     
-  const [results, setResults] = useContext(ResultsContext);
+  const [results] = useContext(ResultsContext);
 
   return (
     <>
