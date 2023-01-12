@@ -6,13 +6,10 @@ import "./MovieDetails.css";
 // import CurrencyFormat from 'react-currency-format';
 
 const Movie = () => {
-  // let location = useLocation();
-  // console.log(location, "location");
 
   let { id } = useParams();
 
-  // const [moviesData, setMoviesData] = useContext(MoviesContext);
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState({})
 
   const fetchMovie = async () => {
     await axios

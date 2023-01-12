@@ -6,8 +6,10 @@ export const MoviesContext = createContext()
 export const MoviesController = (props) => {
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(true)
-  console.log(movies, "movies")
-  console.log(props, "props")
+  // console.log(movies, "movies from MoviesContext")
+  // console.log(props, "props from MoviesContext")
+
+  // const url = ''
 
   const fetchMovies = () => {
     axios.get(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${process.env.REACT_APP_TMDB_API_KEY_V3}`)
