@@ -1,9 +1,7 @@
-import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import { MoviesContext } from "../contexts/MoviesContext";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./MovieDetails.css";
-// import CurrencyFormat from 'react-currency-format';
 
 const Movie = () => {
   let { id } = useParams();
@@ -56,9 +54,9 @@ const Movie = () => {
       <h4 className="margin">Genres :</h4>
       <div className="genres">
         {movie.genres ? (
-          movie.genres.map((e) => {
+          movie.genres.map((e, i) => {
             return (
-              <ul style={{ listStyleType: "none" }}>
+              <ul key={i} style={{ listStyleType: "none" }}>
                 <li>{e.name}</li>
               </ul>
             );
@@ -70,9 +68,9 @@ const Movie = () => {
       <h4 className="margin">Produced by :</h4>
       <div className="genres">
         {movie.production_companies ? (
-          movie.production_companies.map((e) => {
+          movie.production_companies.map((e, i) => {
             return (
-              <ul style={{ listStyleType: "none" }}>
+              <ul key={i} style={{ listStyleType: "none" }}>
                 <li>{e.name}</li>
               </ul>
             );
@@ -91,9 +89,9 @@ const Movie = () => {
         <h4 className="margin">Videos</h4>
         <div className="videos">
           {video.results ? (
-            video.results.map((e) => {
+            video.results.map((e, i) => {
               return (
-                <ul style={{ padding: "10px", listStyleType: "none" }}>
+                <ul key={i} style={{ padding: "10px", listStyleType: "none" }}>
                   <li>
                     <p>{e.name}</p>
                     <a
