@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import { MoviesController } from "./contexts/MoviesContext";
 import { ResultsController } from "./contexts/ResultsContext";
-import MoviesList from "./components/moviesList";
+import MoviesList from "./components/MoviesList";
 import NavBar from "./components/NavBar";
 import MovieDetails from "./components/MovieDetails";
 import * as React from "react";
