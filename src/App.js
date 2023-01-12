@@ -4,17 +4,19 @@ import { Link, Routes, Route } from "react-router-dom";
 import { MoviesController } from "./contexts/MoviesContext";
 import MoviesList from "./components/MoviesList";
 import NavBar from "./components/NavBar";
-import MovieDetails from './components/MovieDetails'
+import MovieDetails from "./components/MovieDetails";
 
 const App = () => {
   return (
     <div className="App">
       <MoviesController>
         <NavBar />
-        <MoviesList />
-        {/* <Routes>
-          <Route path='/filmDetails/:id' element={<MovieDetails />} />
-        </Routes> */}
+        {/* <MoviesList /> */}
+        <Link to="/movies">Movies</Link>
+        <Routes>
+          <Route path="/movies" element={<MoviesList />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </Routes>
       </MoviesController>
     </div>
   );

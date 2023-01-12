@@ -11,9 +11,9 @@ import {Link} from 'react-router-dom'
 
 export default function MediaCard(props) {
   const [movies, setMovies] = useContext(MoviesContext);
-  console.log(movies, "movies");
+  console.log(movies, "movies,");
 
-  console.log(props)
+  console.log(props, "MovieCard")
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -32,7 +32,8 @@ export default function MediaCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Details</Button>
+        {/* <Button size="small">Details</Button> */}
+        <Link to={`/movie/${props.movie.id}`}>Details</Link>
       </CardActions>
     </Card>
   );
