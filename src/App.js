@@ -5,6 +5,9 @@ import { MoviesController } from "./contexts/MoviesContext";
 import MoviesList from "./components/MoviesList";
 import NavBar from "./components/NavBar";
 import MovieDetails from "./components/MovieDetails";
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 const App = () => {
   return (
@@ -12,7 +15,9 @@ const App = () => {
       <MoviesController>
         <NavBar />
         {/* <MoviesList /> */}
-        <Link to="/movies">Movies</Link>
+        <button>
+          <Link to="/movies">Movies</Link>
+        </button>
         <Routes>
           <Route path="/movies" element={<MoviesList />} />
           <Route path="/movie/:id" element={<MovieDetails />} />

@@ -1,0 +1,20 @@
+.page{
+    margin: 50px;
+}
+
+.margin{
+    margin: 35px;
+}
+
+.genres{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+}
+
+.synopsis{
+    padding: 0px 300px;
+    line-height: 30px;
+}
