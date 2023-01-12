@@ -19,7 +19,7 @@ const App = () => {
     <div className="App">
       <NavBar setQuery={setQuery}/>
       <ResultsController query={query}>
-        <SearchResults />
+        {query.length > 0 && <SearchResults />}
       </ResultsController>
       <MoviesController>
         <Routes>
