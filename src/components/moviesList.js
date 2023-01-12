@@ -6,11 +6,10 @@ import "../App.css";
 const MoviesList = () => {
     
   const [movies, setMovies] = useContext(MoviesContext);
-  console.log(movies, "movies");
+  // console.log(movies, "movies");
 
   return (
     <>
-      {/* list of cards */}
       {movies.map((e, i) => {
         return (
           <div key={i} className="card">

@@ -14,10 +14,6 @@ const App = () => {
     <div className="App">
       <MoviesController>
         <NavBar />
-        {/* <MoviesList /> */}
-        <button>
-          <Link to="/movies">Movies</Link>
-        </button>
         <Routes>
           <Route path="/movies" element={<MoviesList />} />
           <Route path="/movie/:id" element={<MovieDetails />} />

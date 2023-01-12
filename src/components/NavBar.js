@@ -16,7 +16,9 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import HomeIcon from "@mui/icons-material/Home";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import MovieIcon from '@mui/icons-material/Movie';
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -59,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -83,7 +85,7 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-//   const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -191,7 +193,8 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <HomeIcon onClick={() => navigate('/')}/>
+            <MovieIcon onClick={() => navigate("/movies")}/>
+            <HomeIcon onClick={() => navigate("/")} />
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
