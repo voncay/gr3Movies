@@ -9,7 +9,8 @@
 .genres{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: center;
     text-align: start;
 }
@@ -17,4 +18,14 @@
 .synopsis{
     padding: 0px 300px;
     line-height: 30px;
+}
+
+.videos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: start;
+    padding: 10px;
 }

@@ -10,6 +10,7 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import SearchResults from "./components/SearchResults";
+import Footer from "./components/Footer";
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
         {query.length > 0 && <SearchResults />}
       </ResultsController>
       <MoviesController>
+        {/* <Footer /> */}
         <Routes>
           <Route path="/movies" element={<MoviesList />} />
           <Route path="/movie/:id" element={<MovieDetails />} />

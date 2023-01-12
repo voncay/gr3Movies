@@ -6,10 +6,10 @@ import "./MovieDetails.css";
 // import CurrencyFormat from 'react-currency-format';
 
 const Movie = () => {
-
   let { id } = useParams();
 
-  const [movie, setMovie] = useState({})
+  const [movie, setMovie] = useState({});
+  const [video, setVideo] = useState({});
 
   const fetchMovie = async () => {
     await axios
@@ -18,13 +18,29 @@ const Movie = () => {
       )
       .then((res) => {
         setMovie(res.data);
-        console.log(res.data, "moviedetails");
+        // console.log(res.data, "moviedetails");
       })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     fetchMovie();
+  }, []);
+
+  const fetchMovieVideo = async () => {
+    await axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_TMDB_API_KEY_V3}`
+      )
+      .then((res) => {
+        setVideo(res.data);
+        // console.log(res.data, "moviedetails video");
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    fetchMovieVideo();
   }, []);
 
   return (
@@ -42,7 +58,7 @@ const Movie = () => {
         {movie.genres ? (
           movie.genres.map((e) => {
             return (
-              <ul style={{ listStyleType: "none"}}>
+              <ul style={{ listStyleType: "none" }}>
                 <li>{e.name}</li>
               </ul>
             );
@@ -56,9 +72,9 @@ const Movie = () => {
         {movie.production_companies ? (
           movie.production_companies.map((e) => {
             return (
-                <ul style={{ listStyleType: "none" }}>
-                  <li>{e.name}</li>
-                </ul>
+              <ul style={{ listStyleType: "none" }}>
+                <li>{e.name}</li>
+              </ul>
             );
           })
         ) : (
@@ -71,6 +87,30 @@ const Movie = () => {
       ) : (
         <p>Unknown</p>
       )}
+      <div>
+        <h4 className="margin">Videos</h4>
+        <div className="videos">
+          {video.results ? (
+            video.results.map((e) => {
+              return (
+                <ul style={{ padding: "10px", listStyleType: "none" }}>
+                  <li>
+                    <p>{e.name}</p>
+                    <a
+                      href={`https://www.youtube.com/watch?v=${e.key}`}
+                      target="_blank"
+                    >
+                      Link here
+                    </a>
+                  </li>
+                </ul>
+              );
+            })
+          ) : (
+            <p>No video available</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
