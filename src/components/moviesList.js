@@ -1,16 +1,24 @@
 import { useContext } from "react";
 import { MoviesContext } from "../contexts/MoviesContext";
+import MovieCard from "./MovieCard";
+import "../App.css";
 
 const MoviesList = () => {
+    
+  const [movies] = useContext(MoviesContext);
+  // console.log(movies, "movies");
 
-    const [movies, setMovies] = useContext(MoviesContext);
-    console.log(movies, "movies")
+  return (
+    <>
+      {movies.map((e, i) => {
+        return (
+          <div key={i} className="card">
+            <MovieCard movie={e} />
+          </div>
+        );
+      })}
+    </>
+  );
+};
 
-    return(
-        <>
-        {/* list of cards */}
-        </>
-    )
-}
-
-export default MoviesList
+export default MoviesList;
