@@ -6,7 +6,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useContext } from "react";
-import { MoviesContext } from "../contexts/MoviesContext";
 import {Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +15,7 @@ export default function MediaCard(props) {
   let navigate = useNavigate();
 
   // console.log(movies, "movies,");
-  // console.log(props, "MovieCard")
+  // console.log(props, "props from MovieCard")
 
   return (
     <Card sx={{ maxWidth: 345 }}>

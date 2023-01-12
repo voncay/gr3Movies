@@ -7,6 +7,7 @@ const MoviesList = () => {
     
   const [movies, setMovies] = useContext(MoviesContext);
   // console.log(movies, "movies");
+  // const [movies] = useContext(MoviesContext);
 
   return (
     <>

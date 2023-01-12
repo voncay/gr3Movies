@@ -60,8 +60,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
-  let navigate = useNavigate();
+export default function PrimarySearchAppBar({ setQuery }) {
+
+  const handleInputChange = (event) => {
+    setQuery(event.target.value)
+  }
+
+  let navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -84,8 +89,6 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
-  //   const navigate = useNavigate();
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -189,6 +192,7 @@ export default function PrimarySearchAppBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              onChange={(event) => handleInputChange(event)}
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
