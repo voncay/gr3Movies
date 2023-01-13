@@ -12,6 +12,7 @@ import Home from './components/Home'
 const App = () => {
 
   const [query, setQuery] = useState('');
+  // console.log(query, "query from App")
 
   return (
     <div className="App">
