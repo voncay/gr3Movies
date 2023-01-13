@@ -7,7 +7,7 @@ export const ResultsController = (props) => {
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(true)
   // console.log(results, "results")
-  console.log(props, "props from ResultsContext")
+  // console.log(props, "props from ResultsContext")
 
   const fetchResults = () => {
     axios.get(`https://api.themoviedb.org/3/search/movie?query=${props.query}&api_key=${process.env.REACT_APP_TMDB_API_KEY_V3}`)

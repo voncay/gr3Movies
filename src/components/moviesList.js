@@ -5,9 +5,8 @@ import "../App.css";
 
 const MoviesList = () => {
     
-  const [movies, setMovies] = useContext(MoviesContext);
+  const [movies] = useContext(MoviesContext);
   // console.log(movies, "movies");
-  // const [movies] = useContext(MoviesContext);
 
   return (
     <>
