@@ -1,7 +1,12 @@
-const Home = () => {
-  return(
-    <h1>Home</h1>
-  )
-}
+import Trailer from "./Trailer";
 
-export default Home
+const Home = () => {
+  return (
+    <div>
+      <h1>Home</h1>
+      <Trailer/>
+    </div>
+  );
+};
+
+export default Home;
