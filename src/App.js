@@ -16,21 +16,26 @@ const App = () => {
   return (
     <div className="App">
       <NavBar setQuery={setQuery}/>
+      <Routes>
       { query.length > 0 ?
-        <ResultsController query={query}>
-            <Routes>
-              <Route path="/" element={<SearchResults />} />
-              <Route path="/movie/:id" element={<MovieDetails />} />
-            </Routes>
-        </ResultsController>
-        : <MoviesController>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/movies" element={<MoviesList />} />
-              <Route path="/movie/:id" element={<MovieDetails />} />
-            </Routes>
-        </MoviesController>
+        <>
+          <Route path="/" element={
+            <ResultsController query={query}>
+              <SearchResults />
+            </ResultsController>} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </>
+        :
+        <>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={
+            <MoviesController>
+              <MoviesList />
+            </MoviesController>} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </>
       }
+      </Routes>
     </div>
   );
 };
